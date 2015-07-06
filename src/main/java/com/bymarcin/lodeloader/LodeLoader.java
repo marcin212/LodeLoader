@@ -25,13 +25,14 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-import blusunrize.immersiveengineering.api.ExcavatorHandler;
+import blusunrize.immersiveengineering.api.tool.ExcavatorHandler;
+
 
 @Mod(modid = LodeLoader.MODID, version = LodeLoader.VERSION, dependencies="required-after: ImmersiveEngineering")
 public class LodeLoader
 {
 	public static final String MODID = "lodeloader";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.1";
 	public static Logger logger = LogManager.getLogger(LodeLoader.MODID);
 
 	@Instance(value = LodeLoader.MODID)
@@ -90,6 +91,7 @@ public class LodeLoader
 				}
 			}
 		}
+		ExcavatorHandler.recalculateChances();
 	}
 
 }
